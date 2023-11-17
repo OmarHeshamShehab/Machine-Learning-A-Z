@@ -1,0 +1,7 @@
+getwd()
+setwd("D:/test/Section 6 Regression/Simple Linear Regression")
+install.packages("renv")
+renv::init()
+renv::install("languageserver")
+renv::install("lintr")
+renv::install("styler")

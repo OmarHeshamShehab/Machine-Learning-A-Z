@@ -1,0 +1,11 @@
+# R
+renv/
+.Rprofile
+renv.lock
+
+
+# Python
+env/
+
+#vs Code folder
+.vscode/
