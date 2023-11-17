@@ -1,5 +1,5 @@
 getwd()
-setwd("D:/test/Section 6 Regression/Simple Linear Regression")
+setwd("D:/Courses/Machine-Learning-A-Z/R/")
 install.packages("renv")
 renv::init()
 renv::install("languageserver")
