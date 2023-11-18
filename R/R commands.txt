@@ -1,7 +1,7 @@
 getwd()
-setwd("D:/Courses/Machine-Learning-A-Z/R/")
+setwd("D:/Courses/Machine-Learning-A-Z/R/Part 2 - Regression/Section 6 Simple Linear Regression")
 install.packages("renv")
 renv::init()
 renv::install("languageserver")
-renv::install("lintr")
-renv::install("styler")
+install.packages("httpgd")
+
