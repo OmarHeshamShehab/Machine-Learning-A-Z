@@ -14,3 +14,5 @@ test_set <- subset(dataset, split == FALSE)
 # training_set[, 2:3]<-scale(training_set[, 2:3])# nolint
 # test_set[, 2:3]=scale(test_set[, 2:3]) # nolint: commented_code_linter.
 View(dataset)
+View(training_set)
+View(test_set)
