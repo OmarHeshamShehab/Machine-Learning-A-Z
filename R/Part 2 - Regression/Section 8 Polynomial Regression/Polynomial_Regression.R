@@ -45,7 +45,41 @@ ggplot() +
   ggtitle("Salary expectation (Polynomial Linear regression)") +
   xlab("Levels") +
   ylab("Salary")
+# Visualising the Polynomial Linear Regression
+# smooth curve line 50
+library(ggplot2)
+ggplot() +
+  geom_point(aes(x = dataset$Level, y = dataset$Salary),
+    colour = "red"
+  ) +
+  geom_line(aes(x = dataset$Level, y = predict(poly_reg, newdata = dataset)),
+    colour = "blue"
+  ) +
+  ggtitle("Truth or Bluff (Polynomial Regression)") +
+  xlab("Level") +
+  ylab("Salary")
 
+# Visualising the Regression Model results  smoother curve
+library(ggplot2)
+x_grid <- seq(min(dataset$Level), max(dataset$Level), 0.1)
+ggplot() +
+  geom_point(aes(x = dataset$Level, y = dataset$Salary),
+    colour = "red"
+  ) +
+  geom_line(
+    aes(x = x_grid, y = predict(poly_reg,
+      newdata = data.frame(
+        Level = x_grid,
+        Level2 = x_grid^2,
+        Level3 = x_grid^3,
+        Level4 = x_grid^4
+      )
+    )),
+    colour = "blue"
+  ) +
+  ggtitle("Truth or Bluff (Polynomial Regression)") +
+  xlab("Level") +
+  ylab("Salary")
 # Predicting new result with Linear Regression
 linear_pred <- predict(lin_reg, data.frame(Level = 6.5))
 View(linear_pred)
