@@ -3,5 +3,6 @@ setwd("D:/Courses/Machine-Learning-A-Z/R/Part 2 - Regression/")
 install.packages("renv")
 renv::init()
 renv::install("languageserver")
+renv::install("e1071")
 install.packages("httpgd")
 
