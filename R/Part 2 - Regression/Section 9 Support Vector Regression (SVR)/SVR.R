@@ -3,7 +3,7 @@
 dataset <- read.csv("Position_Salaries.csv")
 dataset <- dataset[2:3]
 
-# Fitting Linear Regression to data set
+# Fitting SVR to data set
 library(e1071)
 regressor <- svm(formula = Salary ~ ., data = dataset, type = "eps-regression")
 
