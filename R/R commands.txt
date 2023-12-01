@@ -7,4 +7,5 @@ renv::install("e1071")
 renv::install("rpart")
 renv::install("httpgd")
 renv::install("randomForest")
-
+renv::install("./ElemStatLearn_2015.6.26.tar.gz")
+renv::restore()
