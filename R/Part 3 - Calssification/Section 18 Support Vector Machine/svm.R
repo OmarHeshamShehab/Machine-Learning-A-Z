@@ -1,12 +1,9 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/") # nolint
+setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 18 Support Vector Machine") # nolint
 # Classification template
 
 # Importing the dataset
 dataset <- read.csv("Social_Network_Ads.csv")
 dataset <- dataset[3:5]
-
-# Encoding the target feature as factor
-dataset$Purchased <- factor(dataset$Purchased, levels = c(0, 1))
 
 # Splitting the dataset into the Training set and Test set
 library(caTools)
@@ -19,8 +16,12 @@ test_set <- subset(dataset, split == FALSE)
 training_set[-3] <- scale(training_set[-3])
 test_set[-3] <- scale(test_set[-3])
 
-# Fitting classifier to the Training set
-# Create your classifier here
+# Fitting SVM to the Training set
+library(e1071)
+classifier <- svm(
+     formula = Purchased ~ ., data = training_set, type = "C-classification", # nolint
+     kernel = "linear"
+)
 
 # Predicting the Test set results
 y_pred <- predict(classifier, newdata = test_set[-3])
@@ -37,7 +38,7 @@ grid_set <- expand.grid(x1, x2)
 colnames(grid_set) <- c("Age", "EstimatedSalary")
 y_grid <- predict(classifier, newdata = grid_set)
 plot(set[, -3],
-     main = "Classifier (Training set)", # nolint
+     main = "SVM (Training set)", # nolint
      xlab = "Age", ylab = "Estimated Salary",
      xlim = range(x1), ylim = range(x2)
 )
@@ -54,7 +55,7 @@ grid_set <- expand.grid(x1, x2)
 colnames(grid_set) <- c("Age", "EstimatedSalary")
 y_grid <- predict(classifier, newdata = grid_set)
 plot(set[, -3],
-     main = "Classifier (Test set)", xlab = "Age", # nolint
+     main = "SVM (Test set)", xlab = "Age", # nolint
      ylab = "Estimated Salary", xlim = range(x1), ylim = range(x2)
 )
 contour(x1, x2, matrix(as.numeric(y_grid), length(x1), length(x2)), add = TRUE)
