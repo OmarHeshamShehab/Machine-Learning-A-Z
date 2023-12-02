@@ -1,3 +1,4 @@
+setwd("D:/Courses/Machine-Learning-A-Z/R/Part 2 - Regression/Section 7 Multiple Linear Regression") # nolint
 # importing the dataset
 
 dataset <- read.csv("50_Startups.csv")

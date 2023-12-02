@@ -1,5 +1,5 @@
 getwd()
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/")
+setwd("D:/Courses/Machine-Learning-A-Z/R/Part 2 - Regression/Section 6 Simple Linear Regression")
 install.packages("renv")
 renv::init()
 renv::install("languageserver")
@@ -9,3 +9,5 @@ renv::install("httpgd")
 renv::install("randomForest")
 renv::install("./ElemStatLearn_2015.6.26.tar.gz")
 renv::restore()
+renv::snapshot()   for renv.lock
+renv::install('class')

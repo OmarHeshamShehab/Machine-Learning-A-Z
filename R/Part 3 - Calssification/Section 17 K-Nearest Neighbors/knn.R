@@ -1,9 +1,12 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 16 Logistic Regression") # nolint
-# Logistic Regression only model returns in probability
+setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 17 K-Nearest Neighbors") # nolint
+# K-Nearest Neighbors (K-NN)
 
 # Importing the dataset
 dataset <- read.csv("Social_Network_Ads.csv")
 dataset <- dataset[3:5]
+
+# Encoding the target feature as factor
+dataset$Purchased <- factor(dataset$Purchased, levels = c(0, 1))
 
 # Splitting the dataset into the Training set and Test set
 library(caTools)
@@ -16,19 +19,15 @@ test_set <- subset(dataset, split == FALSE)
 training_set[-3] <- scale(training_set[-3])
 test_set[-3] <- scale(test_set[-3])
 
-# Fitting Logistic Regression to the Training set
-classifier <- glm(
-     formula = Purchased ~ ., # nolint
-     family = binomial,
-     data = training_set
+# Fitting K-NN to the Training set and Predicting the Test set results
+library(class)
+y_pred <- knn(
+     train = training_set[, -3], test = test_set[, -3], cl = training_set[, 3], # nolint
+     k = 5, prob = TRUE
 )
 
-# Predicting the Test set results
-prob_pred <- predict(classifier, type = "response", newdata = test_set[-3])
-y_pred <- ifelse(prob_pred > 0.5, 1, 0)
-
 # Making the Confusion Matrix
-cm <- table(test_set[, 3], y_pred > 0.5)
+cm <- table(test_set[, 3], y_pred)
 
 # Visualising the Training set results
 library(ElemStatLearn)
@@ -37,16 +36,18 @@ x1 <- seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
 x2 <- seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set <- expand.grid(x1, x2)
 colnames(grid_set) <- c("Age", "EstimatedSalary")
-prob_set <- predict(classifier, type = "response", newdata = grid_set)
-y_grid <- ifelse(prob_set > 0.5, 1, 0)
+y_grid <- knn(
+     train = training_set[, -3], # nolint
+     test = grid_set, cl = training_set[, 3], k = 5
+)
 plot(set[, -3],
-     main = "Logistic Regression (Training set)", # nolint
+     main = "K-NN (Training set)", # nolint
      xlab = "Age", ylab = "Estimated Salary",
      xlim = range(x1), ylim = range(x2)
 )
 contour(x1, x2, matrix(as.numeric(y_grid), length(x1), length(x2)), add = TRUE)
-points(grid_set, pch = ".", col = ifelse(y_grid == 1, "springgreen3", "tomato"))
-points(set, pch = 21, bg = ifelse(set[, 3] == 1, "green4", "red3"))
+points(grid_set, pch = ".", col = ifelse(y_grid == 1, "dodgerblue", "salmon"))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, "dodgerblue3", "salmon3"))
 
 # Visualising the Test set results
 library(ElemStatLearn)
@@ -55,13 +56,15 @@ x1 <- seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
 x2 <- seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set <- expand.grid(x1, x2)
 colnames(grid_set) <- c("Age", "EstimatedSalary")
-prob_set <- predict(classifier, type = "response", newdata = grid_set)
-y_grid <- ifelse(prob_set > 0.5, 1, 0)
+y_grid <- knn(
+     train = training_set[, -3], test = grid_set, # nolint
+     cl = training_set[, 3], k = 5
+)
 plot(set[, -3],
-     main = "Logistic Regression (Test set)", # nolint
+     main = "K-NN (Test set)", # nolint
      xlab = "Age", ylab = "Estimated Salary",
      xlim = range(x1), ylim = range(x2)
 )
 contour(x1, x2, matrix(as.numeric(y_grid), length(x1), length(x2)), add = TRUE)
-points(grid_set, pch = ".", col = ifelse(y_grid == 1, "springgreen3", "tomato"))
-points(set, pch = 21, bg = ifelse(set[, 3] == 1, "green4", "red3"))
+points(grid_set, pch = ".", col = ifelse(y_grid == 1, "dodgerblue", "salmon"))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, "dodgerblue3", "salmon3"))
