@@ -1,4 +1,4 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 20 Naive Bayes") # nolint
+setwd("E:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 20 Naive Bayes") # nolint
 # Classification template
 
 # Importing the dataset

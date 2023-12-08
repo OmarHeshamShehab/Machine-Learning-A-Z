@@ -1,4 +1,4 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/") # nolint
+setwd("E:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/") # nolint
 # Classification template
 
 # Importing the dataset

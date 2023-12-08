@@ -1,4 +1,4 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 21 Decision Tree") # nolint
+setwd("E:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 21 Decision Tree") # nolint
 
 # Importing the dataset
 dataset <- read.csv("Social_Network_Ads.csv")

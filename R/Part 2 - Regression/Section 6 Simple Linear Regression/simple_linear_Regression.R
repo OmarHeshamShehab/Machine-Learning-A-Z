@@ -1,4 +1,4 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 2 - Regression/Section 6 Simple Linear Regression") # nolint
+setwd("E:/Courses/Machine-Learning-A-Z/R/Part 2 - Regression/Section 6 Simple Linear Regression") # nolint
 # Importing Data Set
 dataset <- read.csv("Salary_Data.csv")
 

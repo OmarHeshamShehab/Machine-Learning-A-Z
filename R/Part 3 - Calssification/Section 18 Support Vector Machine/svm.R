@@ -1,4 +1,4 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 18 Support Vector Machine") # nolint
+setwd("E:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 18 Support Vector Machine") # nolint
 # Classification template
 
 # Importing the dataset

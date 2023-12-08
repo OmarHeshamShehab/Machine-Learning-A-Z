@@ -1,4 +1,4 @@
-setwd("D:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 19 Kernel SVM") # nolint
+setwd("E:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 19 Kernel SVM") # nolint
 # Classification template
 
 # Importing the dataset
