@@ -5,9 +5,10 @@ renv::init()
 renv::install("languageserver")
 renv::install("e1071")
 renv::install("rpart")
-renv::install("httpgd")
+renv::install("httpgd") # for Visualising on vscode
 renv::install("randomForest")
 renv::install("./ElemStatLearn_2015.6.26.tar.gz")
 renv::restore()
 renv::snapshot()   for renv.lock
 renv::install('class')
+renv::install('randomForest')
