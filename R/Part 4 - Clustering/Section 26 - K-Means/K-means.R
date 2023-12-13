@@ -39,7 +39,7 @@ clusplot(
   labels = 2,
   plotchar = FALSE,
   span = TRUE,
-  main = paste("Clusters of customers"),
+  main = paste("Clusters of customers using K-means"),
   xlab = "Annual Income",
   ylab = "Spending Score"
 )
