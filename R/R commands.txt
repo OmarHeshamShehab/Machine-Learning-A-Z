@@ -13,3 +13,4 @@ renv::snapshot()   for renv.lock
 renv::install('class')
 renv::install('randomForest')
 renv::install('cluster')
+renv::install('arules')
