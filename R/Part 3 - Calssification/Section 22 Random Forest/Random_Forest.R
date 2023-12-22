@@ -3,6 +3,9 @@ setwd("E:/Courses/Machine-Learning-A-Z/R/Part 3 - Calssification/Section 22 Rand
 dataset <- read.csv("Social_Network_Ads.csv")
 dataset <- dataset[3:5]
 
+# Encoding the target feature as factor
+dataset$Purchased <- factor(dataset$Purchased, levels = c(0, 1))
+
 # Splitting the dataset into the Training set and Test set
 library(caTools)
 set.seed(123)
