@@ -1,0 +1,49 @@
+
+SGD (Stochastic Gradient Descent)
+
+Library: tf.keras.optimizers.SGD in TensorFlow/Keras.
+When to use: Basic optimizer suitable for limited computational resources, manual control over learning, or exploring the loss landscape.
+
+========================================================================================================================================================================================
+
+Adam (Adaptive Moment Estimation)
+
+Library: tf.keras.optimizers.Adam in TensorFlow/Keras.
+When to use: Widely used due to its adaptive learning rate; suitable as a default choice or for scenarios requiring faster convergence.
+
+========================================================================================================================================================================================
+
+Adagrad (Adaptive Gradient Algorithm)
+
+Library: tf.keras.optimizers.Adagrad in TensorFlow/Keras.
+When to use: Suitable for sparse data or scenarios where certain features are more informative than others.
+========================================================================================================================================================================================
+
+RMSprop (Root Mean Square Propagation)
+
+Library: tf.keras.optimizers.RMSprop in TensorFlow/Keras.
+When to use: Helpful when Adagrad's diminishing learning rates become an issue or in scenarios requiring a more stable learning rate.
+========================================================================================================================================================================================
+
+Adamax
+
+Library: tf.keras.optimizers.Adamax in TensorFlow/Keras.
+When to use: Variant of Adam, beneficial for large models or when Adam's performance degrades on such models.
+========================================================================================================================================================================================
+
+Adadelta
+
+Library: tf.keras.optimizers.Adadelta in TensorFlow/Keras.
+When to use: Extension of Adagrad addressing diminishing learning rates; suitable when Adagrad's decay is problematic.
+========================================================================================================================================================================================
+
+Nadam (Nesterov Adam)
+
+Library: tf.keras.optimizers.Nadam in TensorFlow/Keras.
+When to use: Combines Adam with Nesterov momentum; a good alternative to Adam when using Nesterov momentum is advantageous.
+========================================================================================================================================================================================
+
+Ftrl (Follow-The-Regularizer-Leader)
+
+Library: tf.keras.optimizers.Ftrl in TensorFlow/Keras.
+When to use: Useful for extremely sparse data, such as high-dimensional linear models with a large number of features.
