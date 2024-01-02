@@ -1,0 +1,27 @@
+Handling Categorical Features:
+
+XGBoost: It requires preprocessing to handle categorical variables. One-hot encoding or label encoding is typically used before training.
+CatBoost: It can handle categorical variables directly without preprocessing. It has an in-built feature that can work with categorical data efficiently.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Handling Missing Values:
+
+
+XGBoost: It does not handle missing values by default. Imputation of missing values is needed before training.
+CatBoost: It can handle missing values internally without explicit treatment in most cases.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Performance:
+
+XGBoost: Traditionally, it was considered faster than CatBoost. However, the performance difference might vary depending on the dataset and specific use cases.
+CatBoost: It's known for its efficiency in handling categorical variables and robustness against overfitting. It's designed to work well out-of-the-box without extensive hyperparameter tuning.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Algorithmic Features:
+
+XGBoost: Uses a pre-sorted algorithm by default and requires sorted data for training, which might affect speed.
+CatBoost: Utilizes a different algorithm, employing a more efficient gradient-boosting algorithm based on oblivious trees, reducing the dependency on data sorting and potentially providing faster training speed in certain scenarios.
